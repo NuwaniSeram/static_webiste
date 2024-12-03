@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #006b3f; /* Dark green background */
+    background-color: #333333; 
     padding: 20px;
     color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -12,6 +12,7 @@
   .header-logo {
     display: flex;
     flex-direction: column;
+    color: #FFD700;
   }
   
   .header-logo h1 {
@@ -22,7 +23,7 @@
   .header-logo p {
     margin: 5px 0 0;
     font-size: 1em;
-    color: #d1f7e0; /* Lighter green text */
+    color:#FFD700; 
   }
   
   .header-nav ul {
@@ -45,6 +46,6 @@
   }
   
   .header-nav a:hover {
-    color: #d1f7e0; /* Light green on hover */
+    color: #FFD700;
   }
   
