@@ -32,7 +32,7 @@ const bannerContent = [
   {
     heading: "Building Sustainable Futures",
     text: "Trust us to deliver excellence in every project.",
-    style: { color: "black", textAlign: "center", top: "40%", left: "70%", transform: "translateX(-50%)" },
+    style: { color: "white", textAlign: "center", top: "40%", left: "70%", transform: "translateX(-50%)" },
   },
 ];
 
@@ -121,6 +121,51 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* Our Services Section */}
+      <div className="our-services">
+        <h2>Our Services</h2>
+        <div className="timeline">
+          <div className="timeline-item">
+            <div className="timeline-icon">
+              <img src="../images/design-icon.png" alt="Design Icon" />
+            </div>
+            <div className="timeline-content">
+              <h3>Architectural Design</h3>
+              <p>Innovative and functional designs tailored to your unique requirements.</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-icon">
+              <img src="../images/construction-icon.png" alt="Construction Icon" />
+            </div>
+            <div className="timeline-content">
+              <h3>Construction</h3>
+              <p>High-quality construction services delivered with precision and efficiency.</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-icon">
+              <img src="../images/consulting-icon.png" alt="Consulting Icon" />
+            </div>
+            <div className="timeline-content">
+              <h3>Consulting</h3>
+              <p>Expert advice and guidance to bring your vision to life.</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-icon">
+              <img src="../images/sustainability-icon.png" alt="Sustainability Icon" />
+            </div>
+            <div className="timeline-content">
+              <h3>Sustainability</h3>
+              <p>Eco-friendly and energy-efficient solutions for a greener future.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       
     </div>
   );
