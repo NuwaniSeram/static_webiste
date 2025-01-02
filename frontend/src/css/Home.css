@@ -8,23 +8,86 @@ body{
     color: white;
   }
   
-  .banner {
+  /* .banner {
     position: relative;
-    background-image: url('../images/site3.jpg'); /* Replace with your image path */
+    background-image: url('../images/site3.jpg');
     background-size: cover;
     background-position: center;
-    height: 60vh; /* Full screen height */
-    opacity: 1; /* Set opacity of the banner */
+    height: 60vh; 
+    opacity: 1; 
     color: black;
+  } */
+
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 86.6vh;
+    overflow: hidden;
+  }
+
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.8s ease-in-out;
   }
   
+  /* .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50px; 
+    transform: translateY(-50%);
+    max-width: 600px;
+  } */
+
   .banner-content {
     position: absolute;
     top: 50%;
-    left: 50px; /* Adjust the left position as needed */
-    transform: translateY(-50%);
-    max-width: 600px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #191051;
+    z-index: 2;
   }
+
+  .banner-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Arrow Buttons */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
   
   .banner h1 {
     font-size: 3em;
@@ -50,4 +113,50 @@ body{
   .banner-btn:hover {
     background-color: #FFB400; /* Darker golden on hover */
   }
+
+  /* Why ELFORCE Section */
+.why-elforce {
+  padding: 3rem 1rem;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.why-elforce h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.why-elforce-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.why-item {
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+.why-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #191051;
+}
+
+.why-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.why-item:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
   

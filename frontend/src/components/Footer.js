@@ -1,16 +1,42 @@
 import React from "react";
 import "../css/Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faInstagram,
+  faYoutube,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section about">
-          <h2>LOGO/ Company Name</h2>
+          <h2>ELFORCE ENGINEERING (PVT) LTD</h2>
           <p>
             A synonym for quality, speed, and care. Delivering high-quality
             buildings and infrastructure for over three decades.
           </p>
+
+          {/* Social Media Links */}
+          <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" class="icon facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="icon instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" class="icon youtube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.whatsapp.com" target="_blank" class="icon whatsapp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.tiktok.com" target="_blank" class="icon tiktok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
         </div>
 
         <div className="footer-section links">
@@ -43,7 +69,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Company Name. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} ELFORCE. All rights reserved.</p>
       </div>
     </footer>
   );

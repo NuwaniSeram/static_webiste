@@ -1,14 +1,16 @@
 import React from "react";
 import "../css/Header.css";
 import { Link } from "react-router-dom";
+import logo from "../images/logo_cropped.png";
 
 const Header = () => {
   return (
     <header className="header">
       {/* Logo Section */}
       <div className="header-logo">
-        <h1>LOGO</h1>
-        <p>slogan</p>
+        <Link to="/">
+          <img src={logo} alt="logo" />
+        </Link>
       </div>
 
       {/* Navigation Section */}
