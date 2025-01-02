@@ -1,11 +1,40 @@
 import React, { useState, useEffect } from "react";
 import "../css/Home.css";
 import image1 from "../images/image1.jpg";
-import image2 from "../images/image2.jpg";
-import image3 from "../images/image3.jpg";
+import image2 from "../images/image2.png";
+import image3 from "../images/image3.png";
 import image4 from "../images/image4.jpg";
+import image5 from "../images/image5.png";
 
-const bannerImages = [image1, image2, image3, image4];
+const bannerImages = [image1, image2, image3, image4, image5];
+
+const bannerContent = [
+  {
+    heading: "Your Vision, Our Construction",
+    text: "We bring your ideas to life with expert craftsmanship and innovative solutions.",
+    style: { color: "#fff", textAlign: "left", top: "40%", left: "10%" },
+  },
+  {
+    heading: "Innovative Architectural Designs",
+    text: "Experience elegance and functionality in every detail.",
+    style: { color: "black", textAlign: "center", top: "70%", left: "50%", transform: "translateX(-50%)" },
+  },
+  {
+    heading: "Building Sustainable Futures",
+    text: "Eco-friendly and energy-efficient solutions tailored to your needs.",
+    style: { color: "white", textAlign: "right", top: "40%", right: "50%" },
+  },
+  {
+    heading: "Turning Dreams into Reality",
+    text: "Trust us to deliver excellence in every project.",
+    style: { color: "black", textAlign: "center", top: "40%", left: "50%", transform: "translateX(-50%)" },
+  },
+  {
+    heading: "Building Sustainable Futures",
+    text: "Trust us to deliver excellence in every project.",
+    style: { color: "black", textAlign: "center", top: "40%", left: "70%", transform: "translateX(-50%)" },
+  },
+];
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -16,7 +45,7 @@ const Home = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === bannerImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 15000); // 10 seconds
+    }, 15000); // 15 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -44,14 +73,16 @@ const Home = () => {
             backgroundImage: `url(${bannerImages[currentImageIndex]})`,
           }}
         ></div>
-        {/* <div className="banner-content">
-          <h1>Your Vision, Our Construction</h1>
-          <p>
-            We bring your ideas to life with expert craftsmanship and innovative
-            solutions. Let's build something amazing together.
-          </p>
-          <button className="banner-btn">Get Started</button>
-        </div> */}
+        <div
+          className="banner-content"
+          style={bannerContent[currentImageIndex].style}
+        >
+          <h1>{bannerContent[currentImageIndex].heading}</h1>
+          <p>{bannerContent[currentImageIndex].text}</p>
+          <a href="/contact-us">
+            <button className="banner-btn">Contact Us</button>
+          </a>
+        </div>
         <button className="arrow left-arrow" onClick={prevImage}>
           &#8249;
         </button>
