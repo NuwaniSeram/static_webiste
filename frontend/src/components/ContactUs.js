@@ -14,13 +14,35 @@ const ContactUs = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbx8bzeKqEuyvyIMObzuagmRMZZylcWi33HplXt5WEGfEqKf1OQTgT7r3_PPCsvY7TcXMQ/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+        }
+      );
+
+      console.log("Response:", response);
+
+      // Since we're using no-cors, we won't get a JSON response
+      // Instead, just assume success if we get here
+      setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
-    }, 3000);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong! Please try again.");
+    }
   };
 
   return (
