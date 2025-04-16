@@ -1,0 +1,139 @@
+:root {
+  --primary-color: #f48f1d;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --background: #f9fafb;
+  --card-background: #ffffff;
+  --transition: all 0.3s ease;
+}
+
+.about-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, var(--background), #f3f4f6);
+  padding: 4rem 1rem;
+}
+
+.hero-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.hero-title .accent {
+  color: var(--primary-color);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content-card {
+  background: var(--card-background);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.content-card h2 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.mission {
+  background: var(--card-background);
+  color: var(--text-primary);
+}
+
+.mission h2,
+.mission p {
+  color: var(--text-primary);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .content-card {
+    padding: 1.5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
