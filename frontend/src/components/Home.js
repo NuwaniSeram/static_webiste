@@ -13,31 +13,46 @@ const bannerContent = [
     heading: "Your Vision, Our Construction",
     text: "We bring your ideas to life with expert craftsmanship and innovative solutions.",
     style: { color: "#fff", textAlign: "left", top: "40%", left: "10%" },
+    mobileStyle: { color: "#fff", textAlign: "center", top: "40%", left: "50%", transform: "translateX(-50%)" }
   },
   {
     heading: "Innovative Architectural Designs",
     text: "Experience elegance and functionality in every detail.",
     style: { color: "black", textAlign: "center", top: "70%", left: "50%", transform: "translateX(-50%)" },
+    mobileStyle: { color: "black", textAlign: "center", top: "60%", left: "50%", transform: "translateX(-50%)" }
   },
   {
     heading: "Building Sustainable Futures",
     text: "Eco-friendly and energy-efficient solutions tailored to your needs.",
     style: { color: "white", textAlign: "right", top: "40%", right: "50%" },
+    mobileStyle: { color: "white", textAlign: "center", top: "40%", left: "50%", transform: "translateX(-50%)" }
   },
   {
     heading: "Turning Dreams into Reality",
     text: "Trust us to deliver excellence in every project.",
     style: { color: "black", textAlign: "center", top: "40%", left: "50%", transform: "translateX(-50%)" },
+    mobileStyle: { color: "black", textAlign: "center", top: "40%", left: "50%", transform: "translateX(-50%)" }
   },
   {
     heading: "Building Sustainable Futures",
     text: "Trust us to deliver excellence in every project.",
     style: { color: "white", textAlign: "center", top: "40%", left: "70%", transform: "translateX(-50%)" },
+    mobileStyle: { color: "white", textAlign: "center", top: "40%", left: "50%", transform: "translateX(-50%)" }
   },
 ];
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Automatically change the image every 10 seconds
   useEffect(() => {
@@ -75,7 +90,7 @@ const Home = () => {
         ></div>
         <div
           className="banner-content"
-          style={bannerContent[currentImageIndex].style}
+          style={isMobile ? bannerContent[currentImageIndex].mobileStyle : bannerContent[currentImageIndex].style}
         >
           <h1>{bannerContent[currentImageIndex].heading}</h1>
           <p>{bannerContent[currentImageIndex].text}</p>
@@ -96,24 +111,28 @@ const Home = () => {
         <h2>Why us?</h2>
         <div className="why-elforce-content">
           <div className="why-item">
+            <div className="why-icon">🏗️</div>
             <h3>Experience</h3>
             <p>
               With over three decades of expertise, we have a proven track record of delivering exceptional projects.
             </p>
           </div>
           <div className="why-item">
+            <div className="why-icon">⭐</div>
             <h3>Quality</h3>
             <p>
               We prioritize quality in every project, ensuring durability, precision, and excellence.
             </p>
           </div>
           <div className="why-item">
+            <div className="why-icon">🤝</div>
             <h3>Customer Care</h3>
             <p>
               Our commitment to customer satisfaction is unmatched, with personalized attention to your needs.
             </p>
           </div>
           <div className="why-item">
+            <div className="why-icon">💡</div>
             <h3>Innovation</h3>
             <p>
               We bring innovative solutions to every challenge, combining creativity with functionality.
@@ -128,7 +147,7 @@ const Home = () => {
         <div className="timeline">
           <div className="timeline-item">
             <div className="timeline-icon">
-              <img src="../images/design-icon.png" alt="Design Icon" />
+              <span>🏛️</span>
             </div>
             <div className="timeline-content">
               <h3>Architectural Design</h3>
@@ -137,7 +156,7 @@ const Home = () => {
           </div>
           <div className="timeline-item">
             <div className="timeline-icon">
-              <img src="../images/construction-icon.png" alt="Construction Icon" />
+              <span>🏗️</span>
             </div>
             <div className="timeline-content">
               <h3>Construction</h3>
@@ -146,7 +165,7 @@ const Home = () => {
           </div>
           <div className="timeline-item">
             <div className="timeline-icon">
-              <img src="../images/consulting-icon.png" alt="Consulting Icon" />
+              <span>📋</span>
             </div>
             <div className="timeline-content">
               <h3>Consulting</h3>
@@ -155,7 +174,7 @@ const Home = () => {
           </div>
           <div className="timeline-item">
             <div className="timeline-icon">
-              <img src="../images/sustainability-icon.png" alt="Sustainability Icon" />
+              <span>🌱</span>
             </div>
             <div className="timeline-content">
               <h3>Sustainability</h3>
@@ -164,9 +183,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-
-      
     </div>
   );
 };
